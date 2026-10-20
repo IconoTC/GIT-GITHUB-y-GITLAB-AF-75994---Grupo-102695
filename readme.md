@@ -86,7 +86,7 @@ Desarrollo del curso en la carpeta Oficial -> [repo](https://github.com/IconoTC/
 
 - Anatomía de comandos típicos, referencias VS paths
 
-  - HEAD, master, HEAD~1 y otras referencias útiles
+  - HEAD, main, HEAD~1 y otras referencias útiles
   - Referencias por mensaje de commit (:/cadena)
 
 - Integración con otras herramientas y entornos
@@ -110,7 +110,7 @@ Desarrollo del curso en la carpeta Oficial -> [repo](https://github.com/IconoTC/
 
 ### Día 2 (Martes 20 Octubre 2025)
 
-<!-- - Git internals
+- Git internals
 
   - Estructura de un repositorio git: .git
   - Objetos git: blobs, trees, commits (y tags)
@@ -118,9 +118,9 @@ Desarrollo del curso en la carpeta Oficial -> [repo](https://github.com/IconoTC/
     - Creación del árbol de objetos en un primer commit
     - Modificación del árbol de objetos en commits sucesivos
   - Referencias: heads, ramas (tags y remotes)
-  - Taller: creación de un repositorio git "a mano" -->
+  - Taller: creación de un repositorio git "a mano"
 
-- [Descanso]
+- [Descanso] 11:00 - 11:30
 
 <!-- - Herramientas para preparar un buen commit en cualquier situación
 

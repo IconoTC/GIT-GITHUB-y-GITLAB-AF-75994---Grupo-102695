@@ -1,5 +1,8 @@
 # GIT (20h)
 
+Curso de Git - GitHub - GitLab (25 horas = 5 sesiones de 5 horas)
+Parte del final ver documento aparte: [CI/CD](./ci-cd.md)
+
 ## Índice
 
 - [GIT (20h)](#git-20h)
@@ -60,10 +63,12 @@
       - [Operaciones en la Staging Area (Index)](#operaciones-en-la-staging-area-index)
         - [Añadir ficheros](#añadir-ficheros)
         - [Eliminar de la Staging Area (Index)](#eliminar-de-la-staging-area-index)
+      - [Partial Staging](#partial-staging)
       - [Eliminar ficheros](#eliminar-ficheros)
         - [Problemas con .gitignore](#problemas-con-gitignore)
       - [Cambiar nombre de ficheros](#cambiar-nombre-de-ficheros)
       - [git blame](#git-blame)
+      - [git notes](#git-notes)
     - [Recapitulando: Git básico](#recapitulando-git-básico)
     - [REESCRIBIENDO LA HISTORIA](#reescribiendo-la-historia)
       - [Advertencia](#advertencia)
@@ -112,6 +117,7 @@
     - [TRABAJANDO EN PARALELO: REPOSITORIOS REMOTOS](#trabajando-en-paralelo-repositorios-remotos)
       - [¿Qué son los repositorios remotos?](#qué-son-los-repositorios-remotos)
       - [Clonado de repositorios](#clonado-de-repositorios)
+      - [Git remote](#git-remote)
         - [Operaciones con git remote](#operaciones-con-git-remote)
       - [Operaciones con repositorios remotos](#operaciones-con-repositorios-remotos)
         - [Git push](#git-push)
@@ -141,6 +147,7 @@
     - [GitHub (Continuación)](#github-continuación)
       - [GITHUB PAGES. Practicas](#github-pages-practicas)
         - [Crear un sitio web con Astro y publicarlo en GitHub Pages](#crear-un-sitio-web-con-astro-y-publicarlo-en-github-pages)
+      - [GitHub CLI (continuación)](#github-cli-continuación)
       - [Releases (Liberaciones)](#releases-liberaciones)
         - [Tipos de releases](#tipos-de-releases)
         - [Relación entre tags y releases](#relación-entre-tags-y-releases)
@@ -537,7 +544,7 @@ Es un comando con gran número de opciones que permiten personalizar la salida d
 git show
 ```
 
-Se pueden utilizar herramientas gráficas para visualizar el historial y el contenido de los commits. 
+Se pueden utilizar herramientas gráficas para visualizar el historial y el contenido de los commits.
 
 Por ejemplo, **gitk**, que se instala con Git, o en **VSC** se puede utilizar la extensión **Git Graph**
 
@@ -910,6 +917,12 @@ Otros bloque permiten crear citas de texto:
 > Puede abarcar varias líneas.
 > Incluso puede incluir listas:
 ```
+
+Esto quedaría así:
+
+> Esta es una cita de texto.
+> Puede abarcar varias líneas.
+> Incluso puede incluir listas:
 
 También podemos incluir listas ordenadas y desordenadas:
 
@@ -1607,6 +1620,52 @@ git checkout -- <file>
 git checkout HEAD -- <file>
 ```
 
+#### Partial Staging
+
+```shell
+git add -p ...
+```
+
+- permite añadir al área de preparación (staging area) solo partes de un fichero, en lugar de todo el fichero. 
+- Esto es útil cuando se han hecho varios cambios en un fichero y se quiere hacer un commit solo de algunos de ellos.
+
+La respuesta del shell es interactiva, y permite decidir si se quiere añadir al área de preparación un hunk (trozo) de un fichero o no:
+
+```shell
+(1/1) Stage this hunk [y,n,q,a,d,s,e,p,P,?]
+```
+
+El comando ? muestra la ayuda de las opciones disponibles:
+
+```shell
+(1/1) Stage this hunk [y,n,q,a,d,s,e,p,P,?]? 
+y - stage this hunk
+n - do not stage this hunk
+q - quit; do not stage this hunk or any of the remaining ones
+a - stage this hunk and all later hunks in the file
+d - do not stage this hunk or any of the later hunks in the file
+s - split the current hunk into smaller hunks
+e - manually edit the current hunk
+p - print the current hunk
+P - print the current hunk using the pager
+? - print help
+```
+
+- y: añadir al área de preparación
+- n: no añadir al área de preparación
+- q: salir, no añadir nada más
+- a: añadir todo lo que queda del fichero al área de preparación
+- d: no añadir nada más del fichero al área de preparación
+- s: dividir el hunk en trozos más pequeños
+- e: editar el hunk manualmente
+- p: imprimir el hunk
+- P: imprimir el hunk usando el pager
+- ? : mostrar la ayuda
+
+Inicialmente git detecta los hunks (fragmentos) que tenemos disponibles para añadir al área de preparación, y nos pregunta que queremos hacer con cada uno de ellos. 
+
+Una de las opciones más útiles es la `s`: dividir el hunk en trozos más pequeños, para poder añadir solo una parte del hunk al área de preparación.
+
 #### Eliminar ficheros
 
 Puede hacerse en dos fases
@@ -1707,6 +1766,57 @@ git blame <file>
 Es una herramienta muy útil para la revisión de código, que permite quién ha hecho un cambio en un fichero y para saber por qué se ha hecho un cambio.
 
 Esta también disponible cuando se accede al repositorio en GitHub
+
+#### git notes
+
+Esta funcionalidad se incorpora en Git 1.7.x, hacia 2012, en respuesta a la inmutabilidad de los commits. Permite añadir notas a un commit, sin modificar el commit en sí. 
+
+El comando notes add permite añadir una nota al commit más reciente, 
+El comando notes show permite ver las notas asociadas a ese commit.
+
+```shell
+git notes add -m "This is a note for the commit"
+git notes show
+```
+
+En ambos casos, Tambien se puede indicar un commit específico
+
+```shell
+git notes add -m "This is a note for the commit" <commit> 
+git notes show <commit>
+```
+
+Otras operaciones posibles son
+
+
+- mostrar las notas existentes
+- eliminar alguna nota
+
+```shell
+git notes list
+git notes remove <commit>
+```
+
+Es muy importante entender que las notas no se comparten con tu equipo por defecto. Un git push o git pull no incluirá las notas.
+
+Para compartir tus notas, debes hacer `push` explícitamente la rama de las notas, que se almacena como `refs/notes/commits`:
+
+```shell
+git push origin refs/notes/commits
+```
+
+De manera similar, para obtener notas de un repositorio remoto, tus colaboradores deben obtenerlas explícitamente:
+
+```shell
+git fetch origin refs/notes/commits:refs/notes/commits
+```
+
+Después de haber hecho esto una vez, Git recordará mantener las notas sincronizadas en operaciones de `push` y `fetch` posteriores para ese repositorio.
+
+Técnicamente, las notas son un commit especial que apunta a un objeto de tipo tree, que contiene dos hashes:
+
+- el del commit al que se asocia la nota.
+- el del blob que contiene la nota, es decir el texto que hemos añadido.
 
 ### Recapitulando: Git básico
 
@@ -2147,6 +2257,12 @@ Se puede crear una rama a partir de un commit específico
 
 - `git branch nombre_rama <commit>`: Crea una nueva rama a partir del commit especificado
 - `git checkout -b nombre_rama <commit>`: Crea una nueva rama a partir del commit especificado y cambia a ella
+
+Para mover una rama existente a otro commit puede forzarse que se vuelva a crear en la posición deseada
+
+```shell
+git branch -f nombre_rama_existente <nuevo commit>
+```
 
 Ejemplos con checkout
 
@@ -2602,7 +2718,7 @@ Para trabajar con ellas, se puede crear una rama local que apunte a la rama remo
 git checkout -b nombre_rama origin/nombre_rama.
 ```
 
-git#### Git remote
+#### Git remote
 
 Git utiliza remote y ramas remotas (tracking branch) como referencias que facilitan la conexión con otros repositorios (conocidos como remotos)
 
@@ -3232,6 +3348,10 @@ Para crear un sitio con Astro y publicarlo en GitHub Pages, puedes seguir estos 
 7. **Publicar el sitio web**: GitHub generará automáticamente tu sitio web y te proporcionará una URL para acceder a él (por ejemplo, `https://tu-usuario.github.io/tu-repositorio`).
 
 Para más información sobre el despliegue de Astro en GitHub Pages, puedes consultar la [documentación oficial de Astro](https://docs.astro.build/en/guides/deploy/github/).
+
+#### GitHub CLI (continuación)
+
+Incluir contenido omitido el día anterior
 
 #### Releases (Liberaciones)
 
