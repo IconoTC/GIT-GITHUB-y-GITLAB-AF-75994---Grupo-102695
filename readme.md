@@ -122,15 +122,17 @@ Desarrollo del curso en la carpeta Oficial -> [repo](https://github.com/IconoTC/
 
 - [Descanso] 11:00 - 11:30
 
-<!-- - Herramientas para preparar un buen commit en cualquier situación
+- Herramientas para preparar un buen commit en cualquier situación
 
   - Operaciones en la Staging Area (Index)
     - Añadir ficheros
     - Eliminar de la Staging Area (Index)
+    - git add -p
   - Eliminar ficheros: git rm
     - Problemas con .gitignore
   - Cambiar nombre de ficheros: git mv
   - git blame
+  - git notes
   - Recapitulando: Git básico
 
   - Reescribiendo la historia
@@ -138,20 +140,22 @@ Desarrollo del curso en la carpeta Oficial -> [repo](https://github.com/IconoTC/
     - git command --amend
       - Ref logs
     - git checkout
-    - git reset -->
+      - Evolución de git checkout: Nuevos comandos git switch y git restore
+      - git checkout a nivel de archivo (restore)
+    - git reset 
+      - git reset a nivel de archivo
+    - rebase interactivo
+      - reword: cambiando el mensaje de un commit
+      - edit: modificando un commit
+      - drop: eliminando un commit
 
 ### Día 3 (Miércoles 21 Octubre 2025)
 
 <!-- - Reescribiendo la historia (2)
-  - Evolución de git checkout: Nuevos comandos git switch y git restore
-  - git checkout a nivel de archivo (restore)
-  - git reset a nivel de archivo
-  - rebase interactivo
-    - edit: modificando un commit
-    - squash y fixup: fusionando commits
-    - drop: eliminando un commit
+    - rebase interactivo
+      - pick: reordenando commits
+      - squash y fixup: fusionando commits
 - Otros comandos
-
   - git clean
   - git revert
   - git bisect
