@@ -137,12 +137,13 @@ Desarrollo del curso en la carpeta Oficial -> [repo](https://github.com/IconoTC/
 
   - Reescribiendo la historia
     - Advertencia
-    - git command --amend
+    - git commit --amend
       - Ref logs
     - git checkout
       - Evolución de git checkout: Nuevos comandos git switch y git restore
       - git checkout a nivel de archivo (restore)
     - git reset 
+      - modificadores: --soft, --mixed, --hard
       - git reset a nivel de archivo
     - rebase interactivo
       - reword: cambiando el mensaje de un commit
@@ -151,7 +152,7 @@ Desarrollo del curso en la carpeta Oficial -> [repo](https://github.com/IconoTC/
 
 ### Día 3 (Miércoles 21 Octubre 2025)
 
-<!-- - Reescribiendo la historia (2)
+ - Reescribiendo la historia (2)
     - rebase interactivo
       - pick: reordenando commits
       - squash y fixup: fusionando commits
@@ -168,11 +169,13 @@ Desarrollo del curso en la carpeta Oficial -> [repo](https://github.com/IconoTC/
     - Ver ramas
     - Borrar ramas
     - Mover y renombrar ramas
-  - git stash -->
 
-- [Descanso]
+  - git stash
 
-<!-- - Trabajando en paralelo (2)
+- [Descanso] 11:00 - 11:30
+
+
+- Trabajando en paralelo (2)
 - - Combinación de ramas: Merge y Rebase
     - git merge
       - fast-forward
@@ -190,7 +193,9 @@ Desarrollo del curso en la carpeta Oficial -> [repo](https://github.com/IconoTC/
   - Tags anotadas y tags ligeros
   - Crear, listar, eliminar
 
-- Worktrees -->
+- Worktrees
+
+- ¿Intergraciones?
 
 ### Día 4 (Jueves 22 Octubre 2025)
 
