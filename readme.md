@@ -176,10 +176,10 @@ Desarrollo del curso en la carpeta Oficial -> [repo](https://github.com/IconoTC/
 
 
 - Trabajando en paralelo (2)
-- - Combinación de ramas: Merge y Rebase
+  - Combinación de ramas: Merge y Rebase
     - git merge
       - fast-forward
-      - three-way merge
+      - three-way merge (ort)
     - git rebase
   - Resolución de conflictos
 
@@ -195,35 +195,44 @@ Desarrollo del curso en la carpeta Oficial -> [repo](https://github.com/IconoTC/
 
 - Worktrees
 
-- ¿Intergraciones?
-
 ### Día 4 (Jueves 22 Octubre 2025)
 
-<!-- - Repositorios remotos
+- Integraciones
+
+  - Integración con otras herramientas y entornos
+    - Clientes gráficos
+    - Entornos de desarrollo: VSC
+      - Opciones nativas de VSC para Git
+      - Extensiones de VSC para Git: Git Graph (GitLens, Git History...)
+
+- Repositorios remotos
+
+  - GitHub (repositorios) v. GitLab (grupos y proyectos) 
 
   - Repositorios "bare"
   - Clonar repositorios: git clone
   - git remote
-  - git push
-    - push tags
-  - git pull
-
-    - git fetch
-    - git merge / git rebase
-    - Conflictos
 
   - Ramas remotas
     - Seguimiento de ramas remotas (tracking branches)
     - Crear ramas locales a partir de ramas remotas: fetch + checkout / switch -c
     - Subir ramas locales a ramas remotas: -u
     - Eliminar ramas remotas
+
+  - git push
+    - push tags
+  - git pull
+    - git fetch
+    - git merge / git rebase
+
+- [Descanso] 11:00 - 11:30
+
+ - git pull (continuación)
+    - Conflictos
+
   - Pull requests (GitHub) / Merge requests (GitLab)
     - Flujo de trabajo típico
-    - Revisión de código -->
-
-- [Descanso]
-
-<!-- - Pull requests (GitHub) / Merge requests (GitLab)
+    - Revisión de código
     - Resolución de conflictos en remoto
     - Buenas prácticas:
       - Actualizar la rama con la rama main antes de hacer el merge
@@ -237,15 +246,21 @@ Desarrollo del curso en la carpeta Oficial -> [repo](https://github.com/IconoTC/
   - GitHub Flow
     - Ship-Show-Ask
 
-- Buenas prácticas -->
+- Buenas prácticas
 
-<!-- - GitHub
+- GitHub
   - Hosting de Repositorios
     - repositorios públicos y privados; ramas y remotos: push y pull (v.s.)
     - forks
   - Colaboración
     - pull requests: revisión de código y comentarios (v.s.)
     - PR desde ramas y forks
+ 
+### Día 5 (Viernes 23 Octubre 2025)
+
+<!-- 
+- GitHub (continuación)
+   - Colaboración
     - Proyectos
       - Tableros (Boards)
       - issues y proyectos; milestones
@@ -253,14 +268,10 @@ Desarrollo del curso en la carpeta Oficial -> [repo](https://github.com/IconoTC/
     - Gists
   - GitHub CLI
   - GitHub Pages
-    - Configuración y uso -->
-
-### Día 5 (Viernes 23 Octubre 2025)
-
-<!-- - GitHub (continuación)
-  - GitHub Pages
+    - Configuración y uso
     - Práctica: publicar una web estática generada con Astro
   - Releases
+
 - Integración continua / Entrega continua (CI/CD)
 
   - GitHub Actions
@@ -271,11 +282,14 @@ Desarrollo del curso en la carpeta Oficial -> [repo](https://github.com/IconoTC/
 
 - [Descanso]
 
-<!-- - Integración continua / Entrega continua (CI/CD)
+<!-- 
+
+- Integración continua / Entrega continua (CI/CD)
   - GitHub Actions (continuación)
     - CD: despliegues
       - Secretos
       - Despliegue en GitHub Pages
+
   - GitLab
     - Similitudes y diferencias con GitHub. Merge Request
     - CI/CD en GitLab
@@ -285,4 +299,6 @@ Desarrollo del curso en la carpeta Oficial -> [repo](https://github.com/IconoTC/
       - Variables
       - Despliegues: environments
   - GitHub Actions (continuación)
-    - CD: despliegues de Astro en GitHub Pages -->
+    - CD: despliegues de Astro en GitHub Pages 
+
+-->
