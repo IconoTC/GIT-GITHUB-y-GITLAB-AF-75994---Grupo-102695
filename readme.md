@@ -216,7 +216,7 @@ Desarrollo del curso en la carpeta Oficial -> [repo](https://github.com/IconoTC/
   - Ramas remotas
     - Seguimiento de ramas remotas (tracking branches)
     - Crear ramas locales a partir de ramas remotas: fetch + checkout / switch -c
-    - Subir ramas locales a ramas remotas: -u
+    - Subir ramas locales a ramas remotas: git push -u
     - Eliminar ramas remotas
 
   - git push
@@ -258,7 +258,6 @@ Desarrollo del curso en la carpeta Oficial -> [repo](https://github.com/IconoTC/
  
 ### Día 5 (Viernes 23 Octubre 2025)
 
-<!-- 
 - GitHub (continuación)
    - Colaboración
     - Proyectos
@@ -273,23 +272,20 @@ Desarrollo del curso en la carpeta Oficial -> [repo](https://github.com/IconoTC/
   - Releases
 
 - Integración continua / Entrega continua (CI/CD)
+  - Git Hooks
+    - Husky. Ejemplos
+
+- [Descanso] 11:10 - 11:40
 
   - GitHub Actions
     - Introducción
     - Workflow. Partes y sintaxis
     - Configuración y ejecución de un workflow
-    - Ejemplo de CI (build y test) de una aplicación JS -->
-
-- [Descanso]
-
-<!-- 
-
-- Integración continua / Entrega continua (CI/CD)
-  - GitHub Actions (continuación)
+    - Ejemplo de CI (build y test) de una aplicación JS 
     - CD: despliegues
       - Secretos
       - Despliegue en GitHub Pages
-
+ 
   - GitLab
     - Similitudes y diferencias con GitHub. Merge Request
     - CI/CD en GitLab
@@ -298,7 +294,9 @@ Desarrollo del curso en la carpeta Oficial -> [repo](https://github.com/IconoTC/
       - Artefactos
       - Variables
       - Despliegues: environments
-  - GitHub Actions (continuación)
-    - CD: despliegues de Astro en GitHub Pages 
 
+<!-- NO INCLUIDO 
+- GitHub Actions (continuación)
+  - CD: despliegues de Astro en GitHub Pages  
 -->
+
